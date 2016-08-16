@@ -34,7 +34,11 @@ log(){
 }
 
 # Add ubuntu-pine64-flavour-makers ppa
-add-apt-repository -y ppa:longsleep/ubuntu-pine64-flavour-makers
+cat << EOF >> /etc/apt/sources.list
+
+deb http://ppa.launchpad.net/longsleep/ubuntu-pine64-flavour-makers/ubuntu xenial main
+deb-src http://ppa.launchpad.net/longsleep/ubuntu-pine64-flavour-makers/ubuntu xenial main
+EOF
 apt-get update >> $logfile 2>&1
 
 # Install packages
