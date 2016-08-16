@@ -40,17 +40,17 @@ deb http://ppa.launchpad.net/longsleep/ubuntu-pine64-flavour-makers/ubuntu xenia
 deb-src http://ppa.launchpad.net/longsleep/ubuntu-pine64-flavour-makers/ubuntu xenial main
 EOF
 
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 56A3D45E
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 56A3D45E >> $logfile 2>&1
 
 apt-get update >> $logfile 2>&1
 
 # Install packages
-apt-get -y install sunxi-disp-tool linux-firmware cpufrequtils usbutils
-apt-get -y autoremove
-apt-get clean
+apt-get -y install sunxi-disp-tool linux-firmware cpufrequtils usbutils >> $logfile 2>&1
+apt-get -y autoremove >> $logfile 2>&1
+apt-get clean >> $logfile 2>&1
 
 # Disable ondemand governor
-update-rc.d ondemand disable
+update-rc.d ondemand disable >> $logfile 2>&1
 
 # Configure cpufrequtils (tweak as needed)
 cat << EOF > /etc/default/cpufrequtils
