@@ -49,6 +49,12 @@ and you will end up with a rootfs archive to copy to SD.
     * `sudo nano minimal.sh`
 * `sudo ./start.sh`
 * Answer prompts required by debootstrap second stage
+* `sudo ./finish.sh`
+* Copy archive to your PC/laptop
+    * `scp`
+
+### Extract rootfs 
+* Use a fresh SD Longsleep's image. We are going to delete the old rootfs, so insert the SD into your PC/laptop
 
 ### FreeBSD License
 Copyright (c) Steven P. Goldsmith
