@@ -53,7 +53,7 @@ and you will end up with a rootfs archive to copy to SD.
 * Copy archive to your PC/laptop
     * `scp ubuntu@ipaddress:~/pine64-debootstrap/pine64-xenial-arm64.tar.gz .`
 
-### Extract rootfs 
+### Extract rootfs and boot
 * Use a fresh SD Longsleep's image. We are going to delete the old rootfs, so insert the SD into your PC/laptop
 * Mount SD and find path
     * Under Ubuntu 16.04 it mounted as `/media/username/rootfs` (change username as needed)
@@ -65,6 +65,12 @@ and you will end up with a rootfs archive to copy to SD.
     * `sync`
     * Eject SD and boot in PINE64
     * Login as test (and password you assigned)
+    
+### After you can boot successfully
+* Install sunxi-disp-tool linux-firmware cpufrequtils usbutils
+    * `wget https://raw.githubusercontent.com/sgjava/pine64-debootstrap/master/pine64.sh`
+    * `chmod a+x pine64.sh`
+    * `sudo ./pine64.sh`
 
 ### FreeBSD License
 Copyright (c) Steven P. Goldsmith

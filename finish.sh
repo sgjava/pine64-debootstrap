@@ -37,10 +37,6 @@ log(){
 	echo "\n$timestamp $1" >> $logfile 2>&1
 }
 
-# Copy /boot 
-log "Copy /boot"
-cp -a "/boot/." "$builddir/boot/"
-
 # Copy /lib/modules 
 log "Copy /lib/modules"
 mkdir -p "$builddir/lib/modules"
