@@ -44,6 +44,7 @@ and you will end up with a rootfs archive to copy to SD.
 
 ### Create rootfs
 * `git clone https://github.com/sgjava/pine64-debootstrap.git`
+* `cd pine64-debootstrap`
 * `sudo ./start.sh`
 * Answer prompts required by debootstrap second stage
 
