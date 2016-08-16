@@ -8,21 +8,38 @@ ______ _____ _   _  _____  ____    ___       _      _                 _       _
                                                                                            | |    
                                                                                            |_|
 ```
-If you want to build your own Ubuntu 16.04 rootfs from [Longsleep's](http://forum.pine64.org/showthread.php?tid=376) [image](https://www.stdin.xyz/downloads/people/longsleep/pine64-images/ubuntu) then you stopped by the right place. You just have to run a few scripts (only one it interactive)
+If you want to build your own Ubuntu 16.04 rootfs from [Longsleep's](http://forum.pine64.org/showthread.php?tid=376) [image](https://www.stdin.xyz/downloads/people/longsleep/pine64-images/ubuntu) then you stopped by the right place. You just have to run a few scripts (only one is interactive)
 and you will end up with a rootfs archive to copy to SD.
 
 ### Requirements
-* PINE64 (tested on 2GB version)
+* [PINE64](https://www.pine64.com) (tested on 2GB version)
 * SD card with [Longsleep's](https://www.stdin.xyz/downloads/people/longsleep/pine64-images/ubuntu) latest image
-    * Use a second SD if you do not want to destroy the rootfs with Longsleep's image. It will need to contain the same image.
+    * Use a second SD if you do not want to destroy the rootfs with Longsleep's image. It will need to contain the same image in order to boot.
 * PINE64 has Internet access
+* HDMI display
+* USB keyboard to log in and get IP address after first boot
+* PC/laptop to SSH into PINE64
 
 ### Provides
 * Minimal Ubuntu 16.04 server for headless use
     * You can add a desktop later on if you wish
-    * Weighs in at under 1 GB uncompressed
+    * Weighs in at under 1 GB uncompressed (slightly larger than Longsleep's image)
 * USB wifi enabled
     * Tested with ODROID Wifi Module 3
+    
+### Create rootfs
+* [Create](https://www.stdin.xyz/downloads/people/longsleep/pine64-images/ubuntu/README.txt) bootable SD from Longsleep's image
+* Insert SD card into PINE64 along with network cable, USB keyboard and HDMI display
+* Power on PINE64
+* Login as ubuntu/ubuntu
+* `ifconfig` and get IP address assigned by DHCP.
+* Switch back to your PC and `ssh ubuntu@ipaddress`
+* Resize SD card
+    * `cd /usr/local/sbin`
+    * `sudo ./resize_rootfs.sh`
+* `sudo apt-get update`
+* `sudo apt-get upgrade`
+* `sudo apt-get install git-core`
 
 ### FreeBSD License
 Copyright (c) Steven P. Goldsmith
