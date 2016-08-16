@@ -23,11 +23,8 @@ starttimesec=$(date +%s)
 # Start off in root dir
 cd "/root"
 
-# Get current directory
-curdir=$(cd `dirname $0` && pwd)
-
 # stdout and stderr for commands logged
-logfile="$curdir/minimal.log"
+logfile="/root/minimal.log"
 rm -f $logfile
 
 # Simple logger
