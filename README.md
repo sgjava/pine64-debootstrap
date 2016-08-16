@@ -51,10 +51,20 @@ and you will end up with a rootfs archive to copy to SD.
 * Answer prompts required by debootstrap second stage
 * `sudo ./finish.sh`
 * Copy archive to your PC/laptop
-    * `scp`
+    * `scp ubuntu@ipaddress:~/pine64-debootstrap/pine64-xenial-arm64.tar.gz .`
 
 ### Extract rootfs 
 * Use a fresh SD Longsleep's image. We are going to delete the old rootfs, so insert the SD into your PC/laptop
+* Mount SD and find path
+    * Under Ubuntu 16.04 it mounted as `/media/username/rootfs` (change username as needed)
+* Delete Longsleep's rootfs
+    * `sudo rm -rf /media/username/rootfs`
+    * `sync`
+* Extract new rootfs to SD
+    * `sudo tar -pzxf pine64-xenial-arm64.tar.gz -C /media/username/rootfs`
+    * `sync`
+    * Eject SD and boot in PINE64
+    * Login as test (and password you assigned)
 
 ### FreeBSD License
 Copyright (c) Steven P. Goldsmith
