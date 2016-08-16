@@ -23,7 +23,7 @@ starttimesec=$(date +%s)
 curdir=$(cd `dirname $0` && pwd)
 
 # stdout and stderr for commands logged
-logfile="$curdir/finish.log"
+logfile="$curdir/pine64.log"
 rm -f $logfile
 
 # Simple logger
@@ -39,6 +39,9 @@ cat << EOF >> /etc/apt/sources.list
 deb http://ppa.launchpad.net/longsleep/ubuntu-pine64-flavour-makers/ubuntu xenial main
 deb-src http://ppa.launchpad.net/longsleep/ubuntu-pine64-flavour-makers/ubuntu xenial main
 EOF
+
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 56A3D45E
+
 apt-get update >> $logfile 2>&1
 
 # Install packages
