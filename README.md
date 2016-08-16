@@ -27,7 +27,8 @@ and you will end up with a rootfs archive to copy to SD.
 * USB wifi enabled
     * Tested with ODROID Wifi Module 3
     
-### Create rootfs
+### Prepare PINE64
+* If you already have an SD with Longsleep's image then skip to [Create rootfs](#create-rootfs)
 * [Create](https://www.stdin.xyz/downloads/people/longsleep/pine64-images/ubuntu/README.txt) bootable SD from Longsleep's image
 * Insert SD card into PINE64 along with network cable, USB keyboard and HDMI display
 * Power on PINE64
@@ -40,6 +41,11 @@ and you will end up with a rootfs archive to copy to SD.
 * `sudo apt-get update`
 * `sudo apt-get upgrade`
 * `sudo apt-get install git-core`
+
+### Create rootfs
+* `git clone https://github.com/sgjava/pine64-debootstrap.git`
+* `sudo ./start.sh`
+* Answer prompts required by debootstrap second stage
 
 ### FreeBSD License
 Copyright (c) Steven P. Goldsmith
