@@ -13,6 +13,7 @@ and you will end up with a rootfs archive to copy to SD.
 
 ### Requirements
 * [PINE64](https://www.pine64.com) (tested on 2GB version)
+* 5V/2A PSU (make sure the PSU puts out stable power or it might not boot)
 * SD card with [Longsleep's](https://www.stdin.xyz/downloads/people/longsleep/pine64-images/ubuntu) latest image
     * Use a second SD if you do not want to destroy the rootfs with Longsleep's image. It will need to contain the same image in order to boot.
 * PINE64 has Internet access
@@ -30,7 +31,7 @@ and you will end up with a rootfs archive to copy to SD.
 ### Prepare PINE64
 * If you already have an SD with Longsleep's image then skip to [Create rootfs](#create-rootfs)
 * [Create](https://www.stdin.xyz/downloads/people/longsleep/pine64-images/ubuntu/README.txt) bootable SD from Longsleep's image
-* Insert SD card into PINE64 along with network cable, USB keyboard and HDMI display
+* Insert SD card into PINE64 along with 5V/2A PSU, network cable, USB keyboard and HDMI display
 * Power on PINE64
 * Login as ubuntu/ubuntu
 * `ifconfig` and get IP address assigned by DHCP.
@@ -48,7 +49,7 @@ and you will end up with a rootfs archive to copy to SD.
 * Pick your native language pack instead of en if desired
     * `sudo nano minimal.sh`
 * `sudo ./start.sh`
-* Answer prompts required by debootstrap second stage
+    * Answer prompts required by debootstrap second stage
 * `sudo ./finish.sh`
 * Copy archive to your PC/laptop
     * `scp ubuntu@ipaddress:~/pine64-debootstrap/pine64-xenial-arm64.tar.gz .`
@@ -62,6 +63,7 @@ and you will end up with a rootfs archive to copy to SD.
     * `sync`
 * Extract new rootfs to SD
     * `sudo tar -pzxf pine64-xenial-arm64.tar.gz -C /media/username/rootfs`
+    * Wait a minute or so before sync (I waited for my SD writer activity light to stop blinking). I seem to have better luck this way producing a clean rootfs  
     * `sync`
     * Eject SD and boot in PINE64
     * Login as test (and password you assigned)
