@@ -8,7 +8,6 @@ ______ _____ _   _  _____  ____    ___       _      _                 _       _
                                                                                            | |    
                                                                                            |_|
 ```
-
 If you want to build your own Ubuntu 16.04 rootfs from [Longsleep's](http://forum.pine64.org/showthread.php?tid=376) [image](https://www.stdin.xyz/downloads/people/longsleep/pine64-images/ubuntu) then you stopped by the right place. You just have to run a few scripts (only one it interactive)
 and you will end up with a rootfs archive to copy to SD.
 
