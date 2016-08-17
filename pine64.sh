@@ -52,12 +52,14 @@ apt-get clean >> $logfile 2>&1
 # Disable ondemand governor
 update-rc.d ondemand disable >> $logfile 2>&1
 
-# Configure cpufrequtils (tweak as needed)
+# Configure cpufrequtils (tweak as needed). Using MAX_SPEED > 960000 caused the
+# temperature to stay below the 70C recommended level. This is at full load
+# though.  
 cat << EOF > /etc/default/cpufrequtils
 ENABLE="true"
 GOVERNOR="conservative"
-MAX_SPEED=1632000
-MIN_SPEED=96000
+MAX_SPEED=960000
+MIN_SPEED=480000
 EOF
 
 # Display udev rules
