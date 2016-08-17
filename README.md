@@ -41,9 +41,9 @@ and you will end up with a rootfs archive to copy to SD.
     * `sudo ./resize_rootfs.sh`
 * `sudo apt-get update`
 * `sudo apt-get upgrade`
-* `sudo apt-get install git-core`
 
 ### Create rootfs
+* `sudo apt-get install git-core`
 * `git clone https://github.com/sgjava/pine64-debootstrap.git`
 * `cd pine64-debootstrap`
 * Pick your native language pack instead of en if desired
