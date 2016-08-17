@@ -34,18 +34,19 @@ log(){
 }
 
 # Add ubuntu-pine64-flavour-makers ppa
-cat << EOF >> /etc/apt/sources.list
+#cat << EOF >> /etc/apt/sources.list
+#
+#deb http://ppa.launchpad.net/longsleep/ubuntu-pine64-flavour-makers/ubuntu xenial main
+#deb-src http://ppa.launchpad.net/longsleep/ubuntu-pine64-flavour-makers/ubuntu xenial main
+#EOF
 
-deb http://ppa.launchpad.net/longsleep/ubuntu-pine64-flavour-makers/ubuntu xenial main
-deb-src http://ppa.launchpad.net/longsleep/ubuntu-pine64-flavour-makers/ubuntu xenial main
-EOF
-
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 56A3D45E >> $logfile 2>&1
+#apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 56A3D45E >> $logfile 2>&1
 
 apt-get update >> $logfile 2>&1
 
 # Install packages
-apt-get -y install sunxi-disp-tool linux-firmware cpufrequtils usbutils >> $logfile 2>&1
+#apt-get -y install sunxi-disp-tool linux-firmware cpufrequtils usbutils >> $logfile 2>&1
+apt-get -y install linux-firmware cpufrequtils usbutils >> $logfile 2>&1
 apt-get -y autoremove >> $logfile 2>&1
 apt-get clean >> $logfile 2>&1
 
