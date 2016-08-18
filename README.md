@@ -69,7 +69,7 @@ and you will end up with a rootfs archive to copy to SD.
     * Login as test (and password you assigned)
     
 ### After you can boot successfully
-* Install sunxi-disp-tool linux-firmware cpufrequtils usbutils
+* Install linux-firmware cpufrequtils usbutils
     * `wget https://raw.githubusercontent.com/sgjava/pine64-debootstrap/master/pine64.sh`
     * `chmod a+x pine64.sh`
     * `sudo ./pine64.sh`

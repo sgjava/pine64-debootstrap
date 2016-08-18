@@ -47,8 +47,6 @@ apt-get update >> $logfile 2>&1
 # Install packages
 #apt-get -y install sunxi-disp-tool linux-firmware cpufrequtils usbutils >> $logfile 2>&1
 apt-get -y install linux-firmware cpufrequtils usbutils >> $logfile 2>&1
-apt-get -y autoremove >> $logfile 2>&1
-apt-get clean >> $logfile 2>&1
 
 # Disable ondemand governor
 update-rc.d ondemand disable >> $logfile 2>&1
@@ -64,12 +62,12 @@ MIN_SPEED=480000
 EOF
 
 # Display udev rules
-cat << EOF > /etc/udev/rules.d/90-sunxi-disp-permission.rules
-KERNEL=="disp", MODE="0770", GROUP="video"
-KERNEL=="cedar_dev", MODE="0770", GROUP="video"
-KERNEL=="ion", MODE="0770", GROUP="video"
-KERNEL=="mali", MODE="0770", GROUP="video"
-EOF
+#cat << EOF > /etc/udev/rules.d/90-sunxi-disp-permission.rules
+#KERNEL=="disp", MODE="0770", GROUP="video"
+#KERNEL=="cedar_dev", MODE="0770", GROUP="video"
+#KERNEL=="ion", MODE="0770", GROUP="video"
+#KERNEL=="mali", MODE="0770", GROUP="video"
+#EOF
 
 # Get end time
 endtime=$(date "$dateformat")
