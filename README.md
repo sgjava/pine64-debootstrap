@@ -70,9 +70,15 @@ and you will end up with a rootfs archive to copy to SD.
     
 ### After you can boot successfully
 * Install linux-firmware cpufrequtils usbutils
-    * `wget https://raw.githubusercontent.com/sgjava/pine64-debootstrap/master/pine64.sh`
-    * `chmod a+x pine64.sh`
-    * `sudo ./pine64.sh`
+    * `sudo apt-get -y install linux-firmware cpufrequtils usbutils`
+    * `update-rc.d ondemand disable`
+    * ```cat << EOF > /etc/default/cpufrequtils
+ENABLE="true"
+GOVERNOR="conservative"
+MAX_SPEED=960000
+MIN_SPEED=480000
+EOF
+```
 
 ### FreeBSD License
 Copyright (c) Steven P. Goldsmith
