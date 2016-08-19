@@ -94,7 +94,9 @@ and you will end up with a rootfs archive to copy to SD.
 * `sudo nano /etc/network/interfaces.d/wlx7cff80d3271f`
     * For DHCP
     <pre><code>auto wlx7cff80d3271f
-    iface wlx7cff80d3271f inet dhcp</code></pre>
+    iface wlx7cff80d3271f inet dhcp
+    wpa-ssid ssid
+    wpa-psk password</code></pre>    
     * For static
     <pre><code>auto wlx7cff80d3271f
     iface wlx7cff80d3271f inet static
