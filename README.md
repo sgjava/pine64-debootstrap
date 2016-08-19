@@ -83,11 +83,13 @@ and you will end up with a rootfs archive to copy to SD.
 
 ### Configure wifi
 * Plug in USB Wifi adapter and boot PINE64
+* `lsusb`
+    * `Bus 001 Device 002: ID 0bda:8176 Realtek Semiconductor Corp. RTL8188CUS 802.11n WLAN Adapter`
 * `iwconfig`
-* <pre><code>wlx7cff80d3271f  IEEE 802.11bgn  ESSID:off/any  
-      Mode:Managed  Access Point: Not-Associated   Tx-Power=0 dBm   
-      Retry  long limit:7   RTS thr=2347 B   Fragment thr:off
-      Power Management:on</code></pre>
+    * <pre><code>wlx7cff80d3271f  IEEE 802.11bgn  ESSID:off/any  
+          Mode:Managed  Access Point: Not-Associated   Tx-Power=0 dBm   
+          Retry  long limit:7   RTS thr=2347 B   Fragment thr:off
+          Power Management:on</code></pre>
 * Copy device name (wlx7cff80d3271f for example from above)
 
 ### FreeBSD License
