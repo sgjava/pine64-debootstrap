@@ -82,7 +82,7 @@ and you will end up with a rootfs archive to copy to SD.
     * `reboot -f`
 
 ### Configure wifi
-* Plug in USB Wifi adapter and boot PINE64
+* Plug in USB Wifi adapter and boot PINE64 (I used ODROID [Wifi Module 3](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G137447734369))
 * `lsusb`
     * `Bus 001 Device 002: ID 0bda:8176 Realtek Semiconductor Corp. RTL8188CUS 802.11n WLAN Adapter`
 * `iwconfig`
