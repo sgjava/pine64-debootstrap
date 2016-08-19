@@ -116,7 +116,7 @@ and you will end up with a rootfs archive to copy to SD.
           Link Quality=62/70  Signal level=-48 dBm  
           Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
           Tx excessive retries:0  Invalid misc:5   Missed beacon:0</code></pre>
-* Wifi only and comment out all lines in eth0
+* Wifi only
     *  Comment out all lines in eth0
     * `sudo nano /etc/network/interfaces.d/eth0`
     * Disconnect Ethernet cable
