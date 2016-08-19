@@ -107,6 +107,15 @@ and you will end up with a rootfs archive to copy to SD.
     wpa-ssid ssid
     wpa-psk password</code></pre>
 * `reboot -f`
+* `iwconfig`
+    * <pre><code>wlx7cff80d3271f  IEEE 802.11bgn  ESSID:"cybertown"  
+          Mode:Managed  Frequency:2.437 GHz  Access Point: FF:EE:FF:F2:FF:FE   
+          Bit Rate=7.2 Mb/s   Tx-Power=20 dBm   
+          Retry  long limit:7   RTS thr=2347 B   Fragment thr:off
+          Power Management:off
+          Link Quality=62/70  Signal level=-48 dBm  
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:5   Missed beacon:0</code></pre>
 
 ### FreeBSD License
 Copyright (c) Steven P. Goldsmith
