@@ -91,6 +91,20 @@ and you will end up with a rootfs archive to copy to SD.
           Retry  long limit:7   RTS thr=2347 B   Fragment thr:off
           Power Management:on</code></pre>
 * Copy device name (wlx7cff80d3271f for example from above)
+* `sudo nano /etc/network/interfaces.d/wlx7cff80d3271f`
+    * For DHCP
+    <pre><code>auto wlx7cff80d3271f
+    iface wlx7cff80d3271f inet dhcp</code></pre>
+    * For static
+    <pre><code>auto wlx7cff80d3271f
+    iface wlx7cff80d3271f inet static
+    address 192.168.1.69
+    netmask 255.255.255.0
+    gateway 192.168.1.1
+    dns-nameservers 192.168.1.1
+    wpa-ssid ssid
+    wpa-psk password</code></pre>
+* `reboot -f`
 
 ### FreeBSD License
 Copyright (c) Steven P. Goldsmith
