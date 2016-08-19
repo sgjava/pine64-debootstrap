@@ -73,12 +73,12 @@ and you will end up with a rootfs archive to copy to SD.
     * `sudo su -`
     * `apt-get -y install linux-firmware cpufrequtils usbutils`
     * `update-rc.d ondemand disable`
-    * `cat << EOF > /etc/default/cpufrequtils`
-      `ENABLE="true"`
-      `GOVERNOR="conservative"`
-      `MAX_SPEED=960000`
-      `MIN_SPEED=480000`
-      `EOF`
+    * <pre><code>cat << EOF > /etc/default/cpufrequtils
+      ENABLE="true"
+      GOVERNOR="conservative"
+      MAX_SPEED=960000
+      MIN_SPEED=480000
+      EOF</code></pre>
 
 ### FreeBSD License
 Copyright (c) Steven P. Goldsmith
