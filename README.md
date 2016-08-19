@@ -106,7 +106,7 @@ and you will end up with a rootfs archive to copy to SD.
     dns-nameservers 192.168.1.1
     wpa-ssid ssid
     wpa-psk password</code></pre>
-* `reboot -f`
+* `sudo reboot -f`
 * `iwconfig`
     * <pre><code>wlx7cff80d3271f  IEEE 802.11bgn  ESSID:"cybertown"  
           Mode:Managed  Frequency:2.437 GHz  Access Point: FF:EE:FF:F2:FF:FE   
@@ -116,6 +116,11 @@ and you will end up with a rootfs archive to copy to SD.
           Link Quality=62/70  Signal level=-48 dBm  
           Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
           Tx excessive retries:0  Invalid misc:5   Missed beacon:0</code></pre>
+* Wifi only and comment out all lines in eth0
+    *  Comment out all lines in eth0
+    * `sudo nano /etc/network/interfaces.d/eth0`
+    * Disconnect Ethernet cable
+    * `sudo reboot -f`
 
 ### FreeBSD License
 Copyright (c) Steven P. Goldsmith
