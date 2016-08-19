@@ -79,6 +79,19 @@ and you will end up with a rootfs archive to copy to SD.
       MAX_SPEED=960000
       MIN_SPEED=480000
       EOF</code></pre>
+    * `reboot -f`
+
+### Configure wifi
+    * Plug in USB Wifi adapter and boot PINE64
+    * `iwconfig`
+    * <pre><code>wlx7cff80d3271f  IEEE 802.11bgn  ESSID:off/any  
+          Mode:Managed  Access Point: Not-Associated   Tx-Power=0 dBm   
+          Retry  long limit:7   RTS thr=2347 B   Fragment thr:off
+          Power Management:on</code></pre>
+    * Copy device name (wlx7cff80d3271f for example from above)
+          
+    
+
 
 ### FreeBSD License
 Copyright (c) Steven P. Goldsmith
